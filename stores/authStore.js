@@ -38,6 +38,7 @@ class AuthStore {
   signout = () => {
     delete instance.defaults.headers.common.Authorization;
     this.user = null;
+    console.log("AuthStore -> signout");
   };
 
   checkForToken = async () => {
@@ -45,7 +46,7 @@ class AuthStore {
     if (token) {
       const decodedToken = decode(token);
       console.log(decodedToken);
-      if (Date.now() < decodedToken.expires) {
+      if (Date.now() < decodedToken.exp) {
         this.setUser(token);
       } else {
         this.signout();
