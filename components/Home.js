@@ -2,13 +2,14 @@ import React from "react";
 import {
   HomeBackground,
   Title,
+  Description,
   TopStyling,
   BottomStyling,
   SkipStyled,
   OverLayContainer,
 } from "../styles";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <HomeBackground
       source={{
@@ -19,9 +20,12 @@ const Home = () => {
       <OverLayContainer>
         <TopStyling>
           <Title>Tripster</Title>
+          <Description>Where adventurers come to inspire</Description>
         </TopStyling>
         <BottomStyling>
-          <SkipStyled>Click here to skip</SkipStyled>
+          <SkipStyled onPress={() => navigation.navigate("Signin")}>
+            Click here to skip
+          </SkipStyled>
         </BottomStyling>
       </OverLayContainer>
     </HomeBackground>
