@@ -11,7 +11,7 @@ import {
   AuthButtonText,
   AuthOther,
 } from "../../styles";
-// import authStore from "../../stores/authStore";
+import authStore from "../../stores/authStore";
 
 const Signup = ({ navigation }) => {
   const [user, setUser] = useState({
@@ -23,8 +23,8 @@ const Signup = ({ navigation }) => {
   });
 
   const handleSubmit = async () => {
-    // await authStore.signup(user);
-    // if (authStore.user) navigation.replace("Home");
+    await authStore.signup(user);
+    if (authStore.user) navigation.replace("Home");
   };
   return (
     <AuthContainer>

@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import { useState } from "react";
 
 //Stores
-// import authStore from "../../stores/authStore";
+import authStore from "../../stores/authStore";
 
 //Styling
 import {
@@ -22,8 +22,8 @@ const SignIn = ({ navigation }) => {
   });
 
   const handleSubmit = async () => {
-    // await authStore.signin(user);
-    // if (authStore.user) navigation.replace("Home");
+    await authStore.signin(user);
+    if (authStore.user) navigation.replace("Home");
   };
 
   return (
