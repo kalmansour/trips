@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { Icon } from "native-base";
 
 export const theme = {
   Maincolor: "#FF5A5F", // redish main font color
@@ -50,6 +51,12 @@ export const SkipStyled = styled.Text`
   font-size: 20;
   color: #fff;
   text-align: center;
+`;
+
+export const SignOutButtonStyled = styled(Icon)`
+  color: black;
+  margin-right: 10px;
+  padding-left: 20;
 `;
 
 //Signin && Signup Styling
