@@ -21,6 +21,17 @@ class TripStore {
     }
   };
 
+  createTrip = async (newTrip) => {
+    try {
+      const formData = new FormData();
+      for (const key in newTrip) formData.append(key, newTrip[key]);
+      const response = await instance.post("/trips", formData);
+      this.trips.push(response.data);
+    } catch (error) {
+      console.error("Tripstore -> createTrip -> error", error);
+    }
+  };
+
   getTripById = (tripId) => this.trips.find((trip) => trip.id === tripId);
 }
 
