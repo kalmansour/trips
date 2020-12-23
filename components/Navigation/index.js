@@ -5,10 +5,14 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../Home";
 import Signin from "../authentication/Signin";
 import Signup from "../authentication/Signup";
+
+import TripList from "../TripList";
+import Explorer from "../Explorer";
 // import headerRight from "../headerRight";
 
 //Buttons
 import SignoutButton from "../buttons/SignoutButton";
+
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -22,6 +26,7 @@ const RootNavigator = () => {
           headerRight: () => <SignoutButton />,
         }}
       />
+
       <Screen
         name="Signin"
         component={Signin}
@@ -32,6 +37,8 @@ const RootNavigator = () => {
         component={Signup}
         options={{ headerShown: false }}
       />
+
+      <Screen name="Explorer" component={Explorer} />
     </Navigator>
   );
 };
