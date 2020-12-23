@@ -98,3 +98,13 @@ export const AuthOther = styled.Text`
   color: ${({ theme }) => theme.blackish};
   margin-top: 15px;
 `;
+
+//Trip Item Styling
+export const TripItemStyled = styled.Text`
+  color: ${({ theme }) => theme.Maincolor};
+  font-size: 18;
+  margin-top: 10;
+  margin-bottom: 10;
+  margin-left: 16;
+  width: 100%;
+`;
