@@ -5,7 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../Home";
 import Signin from "../authentication/Signin";
 import Signup from "../authentication/Signup";
-// import headerRight from "../headerRight";
+// import headerRight from "../headerRight"; // remove this unused import
 
 //Buttons
 import SignoutButton from "../buttons/SignoutButton";

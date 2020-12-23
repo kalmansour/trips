@@ -4,10 +4,11 @@ import decode from "jwt-decode";
 import AsyncStorage from "@react-native-community/async-storage";
 
 class AuthStore {
+  user = null;
+
   constructor() {
     makeAutoObservable(this);
   }
-  user = null;
 
   setUser = async (token) => {
     await AsyncStorage.setItem("myToken", token);
@@ -19,6 +20,9 @@ class AuthStore {
     try {
       const res = await instance.post("/signup", userData);
       this.setUser(res.data.token);
+
+      // remove these console logs after you test things and know they work
+      // before merging to main
       console.log("AuthStore -> signup -> res.data.token", res.data.token);
     } catch (error) {
       console.log("AuthStore -> signup -> error", error);
@@ -29,6 +33,8 @@ class AuthStore {
     try {
       const res = await instance.post("/signin", userData);
       this.setUser(res.data.token);
+
+      // this console log too
       console.log("AuthStore -> signin -> res.data.token", res.data.token);
     } catch (error) {
       console.log("AuthStore -> signin -> error", error);
@@ -38,6 +44,8 @@ class AuthStore {
   signout = () => {
     delete instance.defaults.headers.common.Authorization;
     this.user = null;
+
+    // this console log too
     console.log("AuthStore -> signout");
   };
 
@@ -45,6 +53,8 @@ class AuthStore {
     const token = await AsyncStorage.getItem("myToken");
     if (token) {
       const decodedToken = decode(token);
+
+      // this console log too
       console.log(decodedToken);
       if (Date.now() < decodedToken.exp) {
         this.setUser(token);
