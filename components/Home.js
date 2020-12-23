@@ -9,10 +9,10 @@ import {
   OverLayContainer,
 } from "../styles";
 
-// import { SignoutButton } from "./buttons/SignoutButton";
+// import { SignoutButton } from "./buttons/SignoutButton"; // remove this unused import
 
 //Stores
-// import authStore from "../stores/authStore";
+// import authStore from "../stores/authStore"; // remove this unused import
 
 const Home = ({ navigation }) => {
   return (
