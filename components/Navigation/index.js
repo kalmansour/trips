@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../Home";
 import Signin from "../authentication/Signin";
 import Signup from "../authentication/Signup";
+import createTrip from "../createTrip";
 import TripDetail from "../TripDetail";
 import Explorer from "../Explorer";
 // import headerRight from "../headerRight";
@@ -35,8 +36,8 @@ const RootNavigator = () => {
         component={Signup}
         options={{ headerShown: false }}
       />
-
       <Screen name="Explorer" component={Explorer} />
+      <Screen name="createTrip" component={createTrip} />
       <Screen name="TripDetail" component={TripDetail} />
     </Navigator>
   );
