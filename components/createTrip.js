@@ -25,8 +25,6 @@ const createTrip = ({ navigation }) => {
     if (tripStore.trip) navigation.replace("Explorer");
   };
 
-  // const [image, setImage] = useState(null);
-
   useEffect(() => {
     (async () => {
       if (Platform.OS !== "web") {
