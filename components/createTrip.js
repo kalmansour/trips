@@ -14,15 +14,18 @@ import {
 } from "../styles";
 import tripStore from "../stores/tripStore";
 
-const createTrip = ({ navigation }) => {
-  const [trip, setTrip] = useState({
-    title: "",
-    description: "",
-    image: "",
-  });
+const createTrip = ({ navigation, route }) => {
+  const { oldTrip } = route.params;
+  const [trip, setTrip] = useState(
+    oldTrip ?? {
+      title: "",
+      description: "",
+      image: "",
+    }
+  );
   const handleSubmit = async () => {
-    await tripStore.createTrip(trip);
-    if (tripStore.trip) navigation.replace("Explorer");
+    await tripStore[oldTrip ? "updateTrip" : "createTrip"](trip);
+    navigation.navigate("Explorer");
   };
 
   useEffect(() => {
@@ -85,7 +88,7 @@ const createTrip = ({ navigation }) => {
         <></>
       )}
       <AuthButton onPress={handleSubmit}>
-        <AuthButtonText>Post trip</AuthButtonText>
+        <AuthButtonText>{oldTrip ? "Update trip" : "Post trip"}</AuthButtonText>
       </AuthButton>
     </AuthContainer>
   );

@@ -33,6 +33,19 @@ class TripStore {
     }
   };
 
+  updateTrip = async (updatedTrip) => {
+    try {
+      const formData = new FormData();
+      for (const key in updatedTrip) formData.append(key, updatedTrip[key]);
+      await instance.put(`/trips/${updatedTrip.id}`, formData);
+      const trip = this.trips.find((trip) => trip.id === updatedTrip.id);
+      for (const key in trip) trip[key] = updatedTrip[key];
+      trip.image = updatedTrip.image.uri;
+    } catch (error) {
+      console.error("Tripstore -> updateTrip -> error", error);
+    }
+  };
+
   getTripById = (tripId) => this.trips.find((trip) => trip.id === tripId);
 
   deleteTrip = async (tripId) => {
