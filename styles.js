@@ -122,3 +122,18 @@ export const DeleteButtonStyled = styled(Icon)`
   margin-right: 10px;
   padding-left: 20;
 `;
+
+//Trip Details Styling
+export const TripDetailImage = styled.Image`
+  width: 150;
+  height: 150;
+`;
+
+export const TripDetailWrapper = styled.View`
+  margin-top: 50;
+`;
+
+export const TripDetailTitle = styled.Text`
+  font-weight: bold;
+  font-size: 40;
+`;

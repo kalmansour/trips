@@ -10,9 +10,9 @@ import { Image } from "react-native";
 //Components
 import DeleteButton from "./buttons/DeleteButton";
 
-const TripItem = ({ trip }) => {
+const TripItem = ({ trip, navigation }) => {
   return (
-    <ListItem>
+    <ListItem onPress={() => navigation.navigate("TripDetail", { trip: trip })}>
       <Left>
         <Image
           style={{ width: 50, height: 50 }}
