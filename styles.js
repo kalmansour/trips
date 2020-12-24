@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Icon } from "native-base";
+import { Icon, Button } from "native-base";
 
 export const theme = {
   Maincolor: "#FF5A5F", // redish main font color
@@ -121,6 +121,22 @@ export const DeleteButtonStyled = styled(Icon)`
   color: red;
   margin-right: 10px;
   padding-left: 20;
+`;
+
+//Update Button
+export const UpdateButtonStyled = styled(Button)`
+  height: 35;
+  width: 70;
+  margin-top: 10;
+  /* background-color: ${({ theme }) => theme.mainColor}; */
+`;
+
+export const UpdateTextStyled = styled.Text`
+  text-align: center;
+  color: ${({ theme }) => theme.backgroundColor};
+  font-size: 16;
+  font-weight: bold;
+  flex: 1;
 `;
 
 //Trip Details Styling
