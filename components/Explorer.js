@@ -13,6 +13,7 @@ import tripStore from "../stores/tripStore";
 const Explorer = ({ navigation }) => {
   const trips = tripStore.trips;
 
+  // Fragments below aren't necessary, remove them.
   return (
     <>
       <TripList trips={trips} navigation={navigation} />
