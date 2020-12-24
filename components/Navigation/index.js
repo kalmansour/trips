@@ -13,12 +13,11 @@ import Explorer from "../Explorer";
 //Buttons
 import SignoutButton from "../buttons/SignoutButton";
 
-
 const { Navigator, Screen } = createStackNavigator();
 
 const RootNavigator = () => {
   return (
-    <Navigator initialRouteName="Home">
+    <Navigator initialRouteName="Explorer">
       <Screen
         name="Home"
         component={Home}

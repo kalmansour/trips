@@ -115,3 +115,10 @@ export const TripItemStyled = styled.Text`
   margin-left: 16;
   width: 100%;
 `;
+
+//Delete Button
+export const DeleteButtonStyled = styled(Icon)`
+  color: red;
+  margin-right: 10px;
+  padding-left: 20;
+`;
