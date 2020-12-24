@@ -17,7 +17,7 @@ const { Navigator, Screen } = createStackNavigator();
 
 const RootNavigator = () => {
   return (
-    <Navigator initialRouteName="createTrip">
+    <Navigator initialRouteName="Explorer">
       <Screen
         name="Home"
         component={Home}

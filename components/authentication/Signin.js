@@ -23,7 +23,7 @@ const SignIn = ({ navigation }) => {
 
   const handleSubmit = async () => {
     await authStore.signin(user);
-    if (authStore.user) navigation.navigate("Home");
+    if (authStore.user) navigation.navigate("createTrip");
   };
 
   return (

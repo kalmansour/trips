@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { observer } from "mobx-react";
-import { Button, Image, View, Platform } from "react-native";
+import { Button, Image, Platform } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import Constants from "expo-constants";
 
@@ -25,7 +25,7 @@ const createTrip = ({ navigation }) => {
     if (tripStore.trip) navigation.replace("Explorer");
   };
 
-  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -51,7 +51,14 @@ const createTrip = ({ navigation }) => {
     console.log(result);
 
     if (!result.cancelled) {
-      setImage(result.uri);
+      let localUri = result.uri;
+      let filename = localUri.split("/").pop();
+
+      // Infer the type of the image
+      let match = /\.(\w+)$/.exec(filename);
+      let type = match ? `image/${match[1]}` : `image`;
+
+      setTrip({ ...trip, image: { uri: localUri, name: filename, type } });
     }
   };
 
@@ -71,8 +78,13 @@ const createTrip = ({ navigation }) => {
         autoCapitalize="none"
       />
       <Button title="Pick an image from camera roll" onPress={pickImage} />
-      {image && (
-        <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
+      {trip.image ? (
+        <Image
+          source={{ uri: trip.image.uri }}
+          style={{ width: 200, height: 200 }}
+        />
+      ) : (
+        <></>
       )}
       <AuthButton onPress={handleSubmit}>
         <AuthButtonText>Post trip</AuthButtonText>
