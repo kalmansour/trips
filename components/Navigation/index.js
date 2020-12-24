@@ -6,7 +6,7 @@ import Home from "../Home";
 import Signin from "../authentication/Signin";
 import Signup from "../authentication/Signup";
 import createTrip from "../createTrip";
-// import TripList from "../TripList";
+import TripDetail from "../TripDetail";
 import Explorer from "../Explorer";
 // import headerRight from "../headerRight";
 
@@ -38,6 +38,7 @@ const RootNavigator = () => {
       />
       <Screen name="Explorer" component={Explorer} />
       <Screen name="createTrip" component={createTrip} />
+      <Screen name="TripDetail" component={TripDetail} />
     </Navigator>
   );
 };

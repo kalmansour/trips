@@ -6,6 +6,7 @@ import instance from "./instance";
 
 class TripStore {
   trips = [];
+  loading = true;
 
   constructor() {
     makeAutoObservable(this);
@@ -33,6 +34,16 @@ class TripStore {
   };
 
   getTripById = (tripId) => this.trips.find((trip) => trip.id === tripId);
+
+  deleteTrip = async (tripId) => {
+    console.log(instance.defaults.headers.common.Authorization);
+    try {
+      await instance.delete(`/trips/${tripId}`);
+      this.trips = this.trips.filter((trip) => trip.id !== tripId);
+    } catch (error) {
+      console.error("TripStore -> deleteTrip -> error", error);
+    }
+  };
 }
 
 const tripStore = new TripStore();

@@ -10,12 +10,12 @@ import TripList from "./TripList";
 //Stores
 import tripStore from "../stores/tripStore";
 
-const Explorer = () => {
+const Explorer = ({ navigation }) => {
   const trips = tripStore.trips;
 
   return (
     <>
-      <TripList trips={trips} />
+      <TripList trips={trips} navigation={navigation} />
     </>
   );
 };
