@@ -1,7 +1,7 @@
 import React from "react";
 
 //Stores
-import authStore from "../stores/authStore";
+import authStore from "../stores/authStore"; // unused import
 import tripStore from "../stores/tripStore";
 
 //Styling

@@ -9,6 +9,8 @@ import {
   OverLayContainer,
 } from "../styles";
 
+// Seriously, remove all commented code you aren't using.
+
 // import { SignoutButton } from "./buttons/SignoutButton";
 
 //Stores
