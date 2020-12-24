@@ -7,6 +7,9 @@ import { TripItemStyled } from "../styles";
 import { ListItem, Left, Right } from "native-base";
 import { Image } from "react-native";
 
+//Components
+import DeleteButton from "./buttons/DeleteButton";
+
 const TripItem = ({ trip }) => {
   return (
     <ListItem>
@@ -17,7 +20,9 @@ const TripItem = ({ trip }) => {
         />
         <TripItemStyled>{trip.title}</TripItemStyled>
       </Left>
-      <Right></Right>
+      <Right>
+        <DeleteButton tripId={trip.id} />
+      </Right>
     </ListItem>
   );
 };
