@@ -12,10 +12,11 @@ import tripStore from "../stores/tripStore";
 
 const Explorer = ({ navigation }) => {
   const trips = tripStore.trips;
+  const explore = 1;
 
   return (
     <>
-      <TripList trips={trips} navigation={navigation} />
+      <TripList trips={trips} navigation={navigation} explore={explore} />
     </>
   );
 };

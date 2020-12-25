@@ -7,17 +7,24 @@ import TripItem from "./TripItem";
 
 //Styles
 import { List, Content } from "native-base";
-import tripStore from "../stores/tripStore";
+import authStore from "../stores/authStore";
 
-const TripList = ({ trips, navigation }) => {
-  //   const trips = tripStore.trips;
+const TripList = ({ trips, navigation, explore }) => {
+  const exploreList = trips
+    .filter((trip) => trip.userId !== authStore.user.id)
+    .map((trip) => (
+      <TripItem trip={trip} key={trip.id} navigation={navigation} />
+    ));
 
-  const tripList = trips.map((trip) => (
-    <TripItem trip={trip} key={trip.id} navigation={navigation} />
-  ));
+  const profileList = trips
+    .filter((trip) => trip.userId === authStore.user.id)
+    .map((trip) => (
+      <TripItem trip={trip} key={trip.id} navigation={navigation} />
+    ));
+
   return (
     <Content>
-      <List>{tripList}</List>
+      {explore ? <List>{exploreList}</List> : <List>{profileList}</List>}
     </Content>
   );
 };
