@@ -11,17 +11,19 @@ import { Image } from "react-native";
 import UpdateButton from "./buttons/UpdateButton";
 import DeleteButton from "./buttons/DeleteButton";
 
-const TripItem = ({ trip, navigation }) => {
+const TripItem = ({ trip, navigation, explore }) => {
   return (
     <ListItem onPress={() => navigation.navigate("TripDetail", { trip: trip })}>
       <Left>
         <Image style={{ width: 50, height: 50 }} source={{ uri: trip.image }} />
         <TripItemStyled>{trip.title}</TripItemStyled>
       </Left>
-      <Right>
-        <UpdateButton oldTrip={trip} />
-        <DeleteButton tripId={trip.id} />
-      </Right>
+      {!explore ? (
+        <Right>
+          <UpdateButton oldTrip={trip} />
+          <DeleteButton tripId={trip.id} />
+        </Right>
+      ) : null}
     </ListItem>
   );
 };
