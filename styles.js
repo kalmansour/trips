@@ -8,6 +8,27 @@ export const theme = {
   grey: "#767676",
 };
 
+//Profile
+export const ProfileWrapper = styled.View`
+  margin-top: 50;
+`;
+
+export const ProfileImage = styled.Image`
+  width: 150;
+  height: 150;
+  margin-right: auto;
+  margin-left: auto;
+`;
+
+export const ProfileBio = styled.Text`
+  color: ${({ theme }) => theme.Maincolor};
+  font-weight: bold;
+  font-size: 20;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10;
+`;
+
 //Home Styling
 export const HomeBackground = styled.ImageBackground`
   flex: 1;

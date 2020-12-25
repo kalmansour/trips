@@ -8,6 +8,7 @@ import Signup from "../authentication/Signup";
 import createTrip from "../createTrip";
 import TripDetail from "../TripDetail";
 import Explorer from "../Explorer";
+import Profile from "../Profile";
 // import headerRight from "../headerRight";
 
 //Buttons
@@ -39,6 +40,7 @@ const RootNavigator = () => {
       <Screen name="Explorer" component={Explorer} />
       <Screen name="createTrip" component={createTrip} />
       <Screen name="TripDetail" component={TripDetail} />
+      <Screen name="Profile" component={Profile} />
     </Navigator>
   );
 };
