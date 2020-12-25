@@ -22,8 +22,8 @@ class ProfileStore {
     }
   };
 
-  getProfileById = (profileId) =>
-    this.profiles.find((profile) => profile.id === profileId);
+  getProfileById = (userId) =>
+    this.profiles.find((profile) => profile.userId === userId);
 
   updateProfile = async (updatedProfile) => {
     try {
