@@ -64,33 +64,37 @@ const createTrip = ({ navigation, route }) => {
   };
 
   return (
-    <AuthContainer>
-      <AuthTitle>Create Trip</AuthTitle>
-      <AuthTextInput
-        onChangeText={(title) => setTrip({ ...trip, title })}
-        placeholder="Title"
-        placeholderTextColor="#A6AEC1"
-        autoCapitalize="none"
-      />
-      <AuthTextInput
-        onChangeText={(description) => setTrip({ ...trip, description })}
-        placeholder="description"
-        placeholderTextColor="#A6AEC1"
-        autoCapitalize="none"
-      />
-      <Button title="Pick an image from camera roll" onPress={pickImage} />
-      {trip.image ? (
-        <Image
-          source={{ uri: trip.image.uri }}
-          style={{ width: 200, height: 200 }}
+    <>
+      <AuthContainer>
+        <AuthTitle>Create Trip</AuthTitle>
+        <AuthTextInput
+          onChangeText={(title) => setTrip({ ...trip, title })}
+          placeholder="Title"
+          placeholderTextColor="#A6AEC1"
+          autoCapitalize="none"
         />
-      ) : (
-        <></>
-      )}
-      <AuthButton onPress={handleSubmit}>
-        <AuthButtonText>{oldTrip ? "Update trip" : "Post trip"}</AuthButtonText>
-      </AuthButton>
-    </AuthContainer>
+        <AuthTextInput
+          onChangeText={(description) => setTrip({ ...trip, description })}
+          placeholder="description"
+          placeholderTextColor="#A6AEC1"
+          autoCapitalize="none"
+        />
+        <Button title="Pick an image from camera roll" onPress={pickImage} />
+        {trip.image ? (
+          <Image
+            source={{ uri: trip.image.uri }}
+            style={{ width: 200, height: 200 }}
+          />
+        ) : (
+          <></>
+        )}
+        <AuthButton onPress={handleSubmit}>
+          <AuthButtonText>
+            {oldTrip ? "Update trip" : "Post trip"}
+          </AuthButtonText>
+        </AuthButton>
+      </AuthContainer>
+    </>
   );
 };
 

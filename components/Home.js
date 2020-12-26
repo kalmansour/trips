@@ -28,7 +28,7 @@ const Home = ({ navigation }) => {
           <Description>Where adventurers come to inspire</Description>
         </TopStyling>
         <BottomStyling>
-          <SkipStyled onPress={() => navigation.navigate("Signin")}>
+          <SkipStyled onPress={() => navigation.navigate("Explorer")}>
             Click here to skip
           </SkipStyled>
         </BottomStyling>

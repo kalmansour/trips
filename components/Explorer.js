@@ -9,8 +9,10 @@ import TripList from "./TripList";
 
 //Stores
 import tripStore from "../stores/tripStore";
+import authStore from "../stores/authStore";
 
 const Explorer = ({ navigation }) => {
+  if (!authStore.user) navigation.navigate("Signin");
   const trips = tripStore.trips;
   const explore = 1;
 
