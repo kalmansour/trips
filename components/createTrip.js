@@ -12,6 +12,8 @@ import {
   AuthButton,
   AuthButtonText,
 } from "../styles";
+
+//Stores
 import tripStore from "../stores/tripStore";
 
 const createTrip = ({ navigation, route }) => {

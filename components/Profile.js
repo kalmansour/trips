@@ -5,7 +5,7 @@ import { observer } from "mobx-react";
 import TripList from "./TripList";
 
 //Stores
-import authStore from "../stores/authStore";
+// import authStore from "../stores/authStore";
 import profileStore from "../stores/profileStore";
 import tripStore from "../stores/tripStore";
 
