@@ -12,6 +12,7 @@ import tripStore from "../stores/tripStore";
 
 //Styles
 import { ProfileWrapper, ProfileImage, ProfileBio } from "../styles";
+import Signin from "./authentication/Signin";
 
 const Profile = ({ navigation }) => {
   const userProfile = profileStore.getProfileById(authStore.user.id);
@@ -20,11 +21,19 @@ const Profile = ({ navigation }) => {
   const explore = 0;
   return (
     <>
-      <ProfileWrapper>
-        <ProfileImage source={{ uri: userProfile.image }} />
-        <ProfileBio>{userProfile.bio}</ProfileBio>
-      </ProfileWrapper>
-      <TripList trips={trips} explore={explore} navigation={navigation} />
+      {authStore.user ? (
+        <>
+          <ProfileWrapper>
+            <ProfileImage source={{ uri: userProfile.image }} />
+            <ProfileBio>{userProfile.bio}</ProfileBio>
+          </ProfileWrapper>
+          <TripList trips={trips} explore={explore} navigation={navigation} />
+        </>
+      ) : (
+        <>
+          <Signin />
+        </>
+      )}
     </>
   );
 };

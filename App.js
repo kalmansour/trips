@@ -4,8 +4,8 @@ import { StyleSheet, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 
 //Componets
-import RootNavigator from "./components/Navigation";
-import bottomNav from "./components/Navigation/bottomNav";
+// import RootNavigator from "./components/Navigation";
+import MyTabs from "./components/Navigation/index2";
 
 //Styles
 import { ThemeProvider } from "styled-components";
@@ -16,8 +16,7 @@ export default function App() {
     <View style={styles.container}>
       <ThemeProvider theme={theme}>
         <NavigationContainer>
-          <bottomNav />
-          {/* <RootNavigator /> */}
+          <MyTabs />
         </NavigationContainer>
       </ThemeProvider>
       <StatusBar style="auto" />
