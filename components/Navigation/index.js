@@ -9,7 +9,6 @@ import createTrip from "../createTrip";
 import TripDetail from "../TripDetail";
 import Explorer from "../Explorer";
 import Profile from "../Profile";
-// import headerRight from "../headerRight";
 
 //Buttons
 import SignoutButton from "../buttons/SignoutButton";

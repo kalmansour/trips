@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 //Componets
 import RootNavigator from "./components/Navigation";
+import bottomNav from "./components/Navigation/bottomNav";
 
 //Styles
 import { ThemeProvider } from "styled-components";
@@ -15,7 +16,8 @@ export default function App() {
     <View style={styles.container}>
       <ThemeProvider theme={theme}>
         <NavigationContainer>
-          <RootNavigator />
+          <bottomNav />
+          {/* <RootNavigator /> */}
         </NavigationContainer>
       </ThemeProvider>
       <StatusBar style="auto" />
