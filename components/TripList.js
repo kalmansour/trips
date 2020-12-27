@@ -23,20 +23,18 @@ const TripList = ({ trips, navigation, explore }) => {
       />
     ));
 
-  const profileList = trips
-    .filter((trip) => trip.userId === authStore.user.id)
-    .map((trip) => (
-      <TripItem
-        trip={trip}
-        key={trip.id}
-        navigation={navigation}
-        explore={explore}
-      />
-    ));
+  const tripList = trips.map((trip) => (
+    <TripItem
+      trip={trip}
+      key={trip.id}
+      navigation={navigation}
+      explore={explore}
+    />
+  ));
 
   return (
     <Content>
-      {explore ? <List>{exploreList}</List> : <List>{profileList}</List>}
+      <List>{tripList}</List>
     </Content>
   );
 };
