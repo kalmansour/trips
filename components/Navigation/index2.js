@@ -12,6 +12,10 @@ import createTrip from "../createTrip";
 import ExplorerStackScreen from "../Stacks/ExplorerStackScreen";
 import ProfileStackScreen from "../Stacks/ProfileStackScreen";
 
+//Stores
+import profileStore from "../../stores/profileStore";
+import authStore from "../../stores/authStore";
+
 const Tab = createBottomTabNavigator();
 
 const MyTabs = () => {

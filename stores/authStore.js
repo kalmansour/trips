@@ -18,6 +18,8 @@ class AuthStore {
     profileStore.userProfile = this.user.userProfile;
   };
 
+  getUserbyId = (userId) => this.users.find((user) => user.userId === userId);
+
   signup = async (userData) => {
     try {
       const res = await instance.post("/signup", userData);

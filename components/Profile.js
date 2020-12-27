@@ -14,16 +14,27 @@ import SignOutButton from "./buttons/SignoutButton";
 
 //Styles
 import { ProfileWrapper, ProfileImage, ProfileBio } from "../styles";
+import { Text } from "native-base";
 
-const Profile = ({ navigation }) => {
+const Profile = ({ navigation, route }) => {
+  const { other } = route.params;
+  const { userId } = route.params;
+  let userProfile = {};
+
   while (authStore.user) {
-    const userProfile = profileStore.getProfileById(authStore.user.id);
-    const trips = tripStore.trips;
+    if (other) {
+      userProfile = profileStore.getProfileById(userId);
+    } else {
+      userProfile = profileStore.getProfileById(authStore.userId);
+    }
+    console.log(userProfile);
+    const trips = tripStore.trips.filter((trip) => trip.userId === userId);
     const explore = 0;
     return (
       <>
         <SignOutButton />
         <ProfileWrapper>
+          <Text>{userProfile.username}</Text>
           <ProfileImage source={{ uri: userProfile.image }} />
           <ProfileBio>{userProfile.bio}</ProfileBio>
         </ProfileWrapper>

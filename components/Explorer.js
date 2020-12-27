@@ -10,7 +10,9 @@ import authStore from "../stores/authStore";
 
 const Explorer = ({ navigation }) => {
   while (authStore.user) {
-    const trips = tripStore.trips;
+    const trips = tripStore.trips.filter(
+      (trip) => trip.userId !== authStore.user.id
+    );
     const explore = 1;
 
     return <TripList trips={trips} navigation={navigation} explore={explore} />;
