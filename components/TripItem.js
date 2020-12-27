@@ -11,6 +11,8 @@ import { Image } from "react-native";
 import UpdateButton from "./buttons/UpdateButton";
 import DeleteButton from "./buttons/DeleteButton";
 
+// ** TripItem Title on Press take me to profile page and render user profile **
+
 const TripItem = ({ trip, navigation, explore }) => {
   return (
     <ListItem onPress={() => navigation.navigate("TripDetail", { trip: trip })}>

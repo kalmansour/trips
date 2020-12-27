@@ -10,8 +10,13 @@ import TripDetail from "../TripDetail";
 import Explorer from "../Explorer";
 import Profile from "../Profile";
 
+//Stores
+import profileStore from "../../stores/profileStore";
+
 //Buttons
 import SignoutButton from "../buttons/SignoutButton";
+import EditButton from "../buttons/EditButton";
+import editProfile from "../editProfile";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -39,7 +44,14 @@ const RootNavigator = () => {
       <Screen name="Explorer" component={Explorer} />
       <Screen name="createTrip" component={createTrip} />
       <Screen name="TripDetail" component={TripDetail} />
-      <Screen name="Profile" component={Profile} />
+      <Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          headerRight: () => <EditButton />,
+        }}
+      />
+      <Screen name="editProfile" component={editProfile} />
     </Navigator>
   );
 };

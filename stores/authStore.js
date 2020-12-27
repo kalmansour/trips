@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 import instance from "./instance";
 import decode from "jwt-decode";
 import AsyncStorage from "@react-native-community/async-storage";
+import profileStore from "./profileStore";
 
 class AuthStore {
   user = null;
@@ -14,6 +15,7 @@ class AuthStore {
     await AsyncStorage.setItem("myToken", token);
     instance.defaults.headers.common.Authorization = `Bearer ${token}`;
     this.user = decode(token);
+    profileStore.userProfile = this.user.userProfile;
   };
 
   signup = async (userData) => {
@@ -30,6 +32,7 @@ class AuthStore {
     try {
       const res = await instance.post("/signin", userData);
       this.setUser(res.data.token);
+
       console.log("AuthStore -> signin -> res.data.token", res.data.token);
     } catch (error) {
       console.log("AuthStore -> signin -> error", error);
