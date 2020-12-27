@@ -16,22 +16,20 @@ import SignOutButton from "./buttons/SignoutButton";
 import { ProfileWrapper, ProfileImage, ProfileBio } from "../styles";
 
 const Profile = ({ navigation }) => {
-  if (!authStore.user) {
-    console.log(1);
-    navigation.navigate("Signin");
-  }
+  if (!authStore.user) navigation.navigate("Signin");
 
   const userProfile = profileStore.getProfileById(authStore.user.id);
   const trips = tripStore.trips;
   const explore = 0;
+
   return (
     <>
+      <SignOutButton />
       <ProfileWrapper>
         <ProfileImage source={{ uri: userProfile.image }} />
         <ProfileBio>{userProfile.bio}</ProfileBio>
       </ProfileWrapper>
       <TripList trips={trips} explore={explore} navigation={navigation} />
-      <SignOutButton />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
+import { Image } from "react-native";
 
 //Stores
-import authStore from "../stores/authStore";
 import tripStore from "../stores/tripStore";
 
 //Styling
@@ -17,9 +17,10 @@ const TripDetail = ({ navigation, route }) => {
   return (
     <>
       <TripDetailWrapper>
-        <TripDetailImage
+        <Image
           source={{
-            uri: trip.image.replace("localhost", "192.168.8.136"),
+            uri: trip.image,
+            // uri: trip.image.replace("localhost", "192.168.8.136"),
           }}
         />
         <TripDetailTitle>{trip.title}</TripDetailTitle>

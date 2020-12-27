@@ -4,10 +4,11 @@ import decode from "jwt-decode";
 import AsyncStorage from "@react-native-community/async-storage";
 
 class AuthStore {
+  user = null;
+
   constructor() {
     makeAutoObservable(this);
   }
-  user = null;
 
   setUser = async (token) => {
     await AsyncStorage.setItem("myToken", token);

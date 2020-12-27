@@ -4,7 +4,6 @@ import { StyleSheet, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 
 //Componets
-// import RootNavigator from "./components/Navigation";
 import MyTabs from "./components/Navigation/index2";
 
 //Styles

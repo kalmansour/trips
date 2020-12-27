@@ -9,11 +9,6 @@ import {
   OverLayContainer,
 } from "../styles";
 
-// import { SignoutButton } from "./buttons/SignoutButton";
-
-//Stores
-// import authStore from "../stores/authStore";
-
 const Home = ({ navigation }) => {
   return (
     <HomeBackground
