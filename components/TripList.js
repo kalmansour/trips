@@ -2,12 +2,14 @@
 import React from "react";
 import { observer } from "mobx-react";
 
+//Stores
+import authStore from "../stores/authStore";
+
 //Components
 import TripItem from "./TripItem";
 
 //Styles
 import { List, Content } from "native-base";
-import authStore from "../stores/authStore";
 
 const TripList = ({ trips, navigation, explore }) => {
   const exploreList = trips
