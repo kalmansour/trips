@@ -23,7 +23,7 @@ const SignIn = ({ navigation }) => {
 
   const handleSubmit = async () => {
     await authStore.signin(user);
-    if (authStore.user) navigation.navigate("Profile");
+    if (authStore.user) navigation.replace("Profile");
   };
 
   return (

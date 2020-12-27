@@ -9,12 +9,13 @@ import tripStore from "../stores/tripStore";
 import authStore from "../stores/authStore";
 
 const Explorer = ({ navigation }) => {
-  if (!authStore.user) navigation.navigate("Signin");
+  while (authStore.user) {
+    const trips = tripStore.trips;
+    const explore = 1;
 
-  const trips = tripStore.trips;
-  const explore = 1;
-
-  return <TripList trips={trips} navigation={navigation} explore={explore} />;
+    return <TripList trips={trips} navigation={navigation} explore={explore} />;
+  }
+  navigation.replace("Signin");
 };
 
 export default observer(Explorer);
