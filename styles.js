@@ -137,6 +137,13 @@ export const TripItemStyled = styled.Text`
   width: 100%;
 `;
 
+//Edit Button
+export const EditButtonStyled = styled(Icon)`
+  color: ${({ theme }) => theme.blackish};
+  margin-right: 10px;
+  padding-left: 20;
+`;
+
 //Delete Button
 export const DeleteButtonStyled = styled(Icon)`
   color: red;

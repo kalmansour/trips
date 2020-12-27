@@ -12,9 +12,11 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import UpdateButton from "./buttons/UpdateButton";
 import DeleteButton from "./buttons/DeleteButton";
 
+
 //Stores
 import profileStore from "../stores/profileStore";
 import authStore from "../stores/authStore";
+
 
 const TripItem = ({ trip, navigation, explore }) => {
   const profile = profileStore.getProfileById(trip.userId);
