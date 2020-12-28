@@ -29,7 +29,7 @@ const TripItem = ({ trip, navigation }) => {
       </Left>
       {myProfile ? (
         <Right>
-          <UpdateButton oldTrip={trip} />
+          <UpdateButton oldTrip={trip} navigation={navigation} />
           <DeleteButton tripId={trip.id} />
         </Right>
       ) : (

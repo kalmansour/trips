@@ -26,7 +26,7 @@ const createTrip = ({ navigation, route }) => {
   );
   const handleSubmit = async () => {
     await tripStore[route.params?.oldTrip ? "updateTrip" : "createTrip"](trip);
-    navigation.navigate("Explorer");
+    navigation.navigate("Profile");
   };
 
   useEffect(() => {
@@ -67,7 +67,9 @@ const createTrip = ({ navigation, route }) => {
   return (
     <>
       <AuthContainer>
-        <AuthTitle>Create Trip</AuthTitle>
+        <AuthTitle>
+          {route.params?.oldTrip ? "Update Trip" : "Create Trip"}
+        </AuthTitle>
         <AuthTextInput
           onChangeText={(title) => setTrip({ ...trip, title })}
           placeholder="Title"

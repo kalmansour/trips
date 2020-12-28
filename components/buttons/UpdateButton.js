@@ -1,12 +1,10 @@
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
+// import { observer } from "mobx-react";
 
 //Styles
 import { UpdateButtonStyled, UpdateTextStyled } from "../../styles";
 
-const UpdateButton = ({ oldTrip }) => {
-  const navigation = useNavigation();
-
+const UpdateButton = ({ oldTrip, navigation }) => {
   return (
     <UpdateButtonStyled
       onPress={() => navigation.navigate("createTrip", { oldTrip })}
