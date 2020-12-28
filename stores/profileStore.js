@@ -32,9 +32,10 @@ class ProfileStore {
       for (const key in updatedProfile)
         formData.append(key, updatedProfile[key]);
       await instance.put("/profiles", formData);
-      const profile = this.userProfile;
-      for (const key in profile) profile[key] = updatedProfile[key];
-      profile.image = URL.createObjectURL(formData.image);
+      await this.fetchProfiles();
+      // const profile = this.userProfile;
+      // for (const key in profile) profile[key] = updatedProfile[key];
+      // profile.image = URL.createObjectURL(formData.image);
     } catch (error) {
       console.error("ProfileStore -> updateProfile -> error", error);
     }

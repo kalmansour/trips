@@ -12,17 +12,14 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import UpdateButton from "./buttons/UpdateButton";
 import DeleteButton from "./buttons/DeleteButton";
 
-
 //Stores
 import profileStore from "../stores/profileStore";
 import authStore from "../stores/authStore";
 
-
-const TripItem = ({ trip, navigation, explore }) => {
+const TripItem = ({ trip, navigation }) => {
   const profile = profileStore.getProfileById(trip.userId);
-  const other = 1;
   let myProfile;
-  authStore.user.id === profileStore.userId ? (myProfile = 1) : (myProfile = 0);
+  authStore.user.id === profile.userId ? (myProfile = 1) : (myProfile = 0);
 
   return (
     <ListItem onPress={() => navigation.navigate("TripDetail", { trip: trip })}>
@@ -40,7 +37,6 @@ const TripItem = ({ trip, navigation, explore }) => {
           <TouchableOpacity
             onPress={() =>
               navigation.navigate("Profile", {
-                other: other,
                 userId: profile.userId,
               })
             }

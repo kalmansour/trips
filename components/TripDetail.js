@@ -13,14 +13,14 @@ import { Spinner, Text } from "native-base";
 const TripDetail = ({ navigation, route }) => {
   const { trip } = route.params;
   if (tripStore.loading) return <Spinner />;
-
+  console.log(trip.image);
   return (
     <>
       <TripDetailWrapper>
         <Image
+          style={{ width: 100, height: 100 }}
           source={{
             uri: trip.image,
-            // uri: trip.image.replace("localhost", "192.168.8.136"),
           }}
         />
         <TripDetailTitle>{trip.title}</TripDetailTitle>
