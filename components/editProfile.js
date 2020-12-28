@@ -48,9 +48,9 @@ const editProfile = ({ navigation }) => {
       quality: 1,
     });
 
-    console.log(result);
-
     if (!result.cancelled) {
+      console.log(result);
+
       let localUri = result.uri;
       let filename = localUri.split("/").pop();
 

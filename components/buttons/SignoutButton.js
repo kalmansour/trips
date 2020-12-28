@@ -7,13 +7,18 @@ import authStore from "../../stores/authStore";
 //Styles
 import { SignOutButtonStyled } from "../../styles";
 
-const SignoutButton = () => {
+const SignoutButton = ({ navigation }) => {
+  const handleSubmit = async () => {
+    await authStore.signout();
+    navigation.replace("Signin");
+  };
+
   return (
     authStore.user && (
       <SignOutButtonStyled
         type="AntDesign"
         name="logout"
-        onPress={authStore.signout}
+        onPress={handleSubmit}
       />
     )
   );

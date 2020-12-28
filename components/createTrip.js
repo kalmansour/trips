@@ -17,16 +17,15 @@ import {
 import tripStore from "../stores/tripStore";
 
 const createTrip = ({ navigation, route }) => {
-  const { oldTrip } = route.params;
   const [trip, setTrip] = useState(
-    oldTrip ?? {
+    route.params?.oldTrip ?? {
       title: "",
       description: "",
       image: "",
     }
   );
   const handleSubmit = async () => {
-    await tripStore[oldTrip ? "updateTrip" : "createTrip"](trip);
+    await tripStore[route.params?.oldTrip ? "updateTrip" : "createTrip"](trip);
     navigation.navigate("Explorer");
   };
 
@@ -92,7 +91,7 @@ const createTrip = ({ navigation, route }) => {
         )}
         <AuthButton onPress={handleSubmit}>
           <AuthButtonText>
-            {oldTrip ? "Update trip" : "Post trip"}
+            {route.params?.oldTrip ? "Update trip" : "Post trip"}
           </AuthButtonText>
         </AuthButton>
       </AuthContainer>

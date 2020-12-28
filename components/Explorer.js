@@ -13,9 +13,7 @@ const Explorer = ({ navigation }) => {
     const trips = tripStore.trips.filter(
       (trip) => trip.userId !== authStore.user.id
     );
-    const explore = 1;
-
-    return <TripList trips={trips} navigation={navigation} explore={explore} />;
+    return <TripList trips={trips} navigation={navigation} />;
   }
 };
 
