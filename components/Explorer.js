@@ -17,7 +17,6 @@ const Explorer = ({ navigation }) => {
 
     return <TripList trips={trips} navigation={navigation} explore={explore} />;
   }
-  navigation.replace("Signin");
 };
 
 export default observer(Explorer);

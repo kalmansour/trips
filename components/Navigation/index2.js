@@ -7,14 +7,9 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { theme } from "../../styles";
 
 //Components
-import Home from "../Home";
 import createTrip from "../createTrip";
 import ExplorerStackScreen from "../Stacks/ExplorerStackScreen";
 import ProfileStackScreen from "../Stacks/ProfileStackScreen";
-
-//Stores
-import profileStore from "../../stores/profileStore";
-import authStore from "../../stores/authStore";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,9 +20,7 @@ const MyTabs = () => {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === "Home") {
-            iconName = focused ? "home" : "home-outline";
-          } else if (route.name === "Explorer") {
+          if (route.name === "Explorer") {
             iconName = focused ? "search" : "search-outline";
           } else if (route.name === "createTrip") {
             iconName = focused ? "add-circle" : "add-circle-outline";
@@ -45,7 +38,6 @@ const MyTabs = () => {
         },
       }}
     >
-      <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Explorer" component={ExplorerStackScreen} />
       <Tab.Screen name="createTrip" component={createTrip} />
       <Tab.Screen name="Profile" component={ProfileStackScreen} />

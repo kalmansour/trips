@@ -42,7 +42,6 @@ const Profile = ({ navigation, route }) => {
       </>
     );
   }
-  navigation.replace("Signin");
 };
 
 export default observer(Profile);
