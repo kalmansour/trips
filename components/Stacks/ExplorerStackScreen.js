@@ -23,6 +23,9 @@ const ExplorerStackScreen = () => {
         name="TripDetail"
         component={TripDetail}
         options={{
+          headerStyle: {
+            backgroundColor: null,
+          },
           headerTitle: null,
           headerTitle: null,
           headerBackTitle: null,
@@ -34,7 +37,9 @@ const ExplorerStackScreen = () => {
         name="ProfileScreen"
         component={Profile}
         options={{
-          headerTitle: null,
+          headerStyle: {
+            backgroundColor: null,
+          },
           headerTitle: null,
           headerBackTitle: null,
           headerBackTitleVisible: null,

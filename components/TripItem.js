@@ -22,7 +22,10 @@ const TripItem = ({ trip, navigation }) => {
   authStore.user.id === profile.userId ? (myProfile = 1) : (myProfile = 0);
 
   return (
-    <ListItem onPress={() => navigation.navigate("TripDetail", { trip: trip })}>
+    <ListItem
+      onPress={() => navigation.navigate("TripDetail", { trip: trip })}
+      style={{ marginTop: 10 }}
+    >
       <Left>
         <TripImageStyled source={{ uri: trip.image }} />
         <TripItemStyled>{trip.title}</TripItemStyled>

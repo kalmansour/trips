@@ -12,40 +12,40 @@ export const theme = {
 
 //Profile
 export const ProfileWrapper = styled.View`
-  margin-top: 50;
+  margin-top: 50px;
 `;
 
 export const ProfileImage = styled.Image`
-  width: 200;
-  height: 200;
+  width: 200px;
+  height: 200px;
   margin-right: auto;
   margin-left: auto;
-  border-radius: 100;
+  border-radius: 100px;
 `;
 
 export const ProfileUsernameStyled = styled.Text`
   color: ${({ theme }) => theme.black};
   font-weight: bold;
-  font-size: 30;
+  font-size: 30px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 10;
+  margin-top: 10px;
 `;
 
 export const ProfileBio = styled.Text`
   color: ${({ theme }) => theme.blackish};
   font-weight: bold;
-  font-size: 20;
+  font-size: 20px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 10;
+  margin-top: 10px;
 `;
 
 //Home Styling
 export const HomeBackground = styled.ImageBackground`
-  flex: 1;
+  flex: 1px;
   width: 100%;
-  height: 100;
+  height: 100px;
 `;
 
 export const TopStyling = styled.View`
@@ -56,13 +56,13 @@ export const TopStyling = styled.View`
 
 export const Title = styled.Text`
   color: ${({ theme }) => theme.Maincolor};
-  font-size: 38;
+  font-size: 38px;
   text-align: center;
   font-weight: bold;
 `;
 
 export const Description = styled.Text`
-  margin-top: 5;
+  margin-top: 5px;
   color: ${({ theme }) => theme.backgroundColor};
   font-size: 25;
   font-style: italic;
@@ -70,7 +70,7 @@ export const Description = styled.Text`
 `;
 
 export const OverLayContainer = styled.View`
-  flex: 1;
+  flex: 1px;
   background-color: rgba(255, 90, 95, 0.2);
 `;
 
@@ -81,7 +81,7 @@ export const BottomStyling = styled.View`
 `;
 
 export const SkipStyled = styled.Text`
-  font-size: 20;
+  font-size: 20px;
   color: #fff;
   text-align: center;
 `;
@@ -89,14 +89,14 @@ export const SkipStyled = styled.Text`
 export const SignOutButtonStyled = styled(Icon)`
   color: ${({ theme }) => theme.blueish};
   margin-right: 10px;
-  padding-left: 20;
-  margin-bottom: 10;
+  padding-left: 20px;
+  margin-bottom: 10px;
 `;
 
 export const BackButtonStyled = styled(Icon)`
   color: black;
   margin-right: 10px;
-  padding-left: 20;
+  padding-left: 20px;
 `;
 
 //Signin && Signup Styling
@@ -105,7 +105,7 @@ export const AuthContainer = styled.View`
   align-self: stretch;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.backgroundColor};
+  /* background-color: ${({ theme }) => theme.backgroundColor}; */
   padding-right: 60px;
   padding-left: 60px;
 `;
@@ -149,10 +149,10 @@ export const AuthOther = styled.Text`
 //Trip Item Styling
 export const TripItemStyled = styled.Text`
   color: ${({ theme }) => theme.Maincolor};
-  font-size: 18;
-  margin-top: 30;
-  margin-bottom: 10;
-  margin-left: 30;
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: 30px;
   width: 100%;
 `;
 
@@ -164,59 +164,59 @@ export const TripImageStyled = styled.Image`
 //Edit Button
 export const EditButtonStyled = styled(Icon)`
   color: ${({ theme }) => theme.blueish};
-  padding-left: 20;
-  margin-bottom: 10;
+  padding-left: 20px;
+  margin-bottom: 10px;
 `;
 
 //Delete Button
 export const DeleteButtonStyled = styled(Icon)`
   color: red;
   margin-right: 10px;
-  padding-left: 20;
+  padding-left: 20px;
 `;
 
 //Update Button
 export const UpdateButtonStyled = styled(Icon)`
   color: ${({ theme }) => theme.blueish};
   margin-right: 5px;
-  padding-left: 20;
-  margin-bottom: 10;
+  padding-left: 20px;
+  margin-bottom: 10px;
 `;
 
 export const UpdateTextStyled = styled.Text`
   text-align: center;
   color: ${({ theme }) => theme.backgroundColor};
-  font-size: 16;
+  font-size: 16px;
   font-weight: bold;
-  flex: 1;
+  flex: 1px;
 `;
 
 //Trip Details Styling
 export const TripDetailImage = styled.Image`
   margin-left: auto;
   margin-right: auto;
-  width: 350;
-  height: 300;
+  width: 350px;
+  height: 300px;
 `;
 
 export const TripDetailWrapper = styled.View`
-  margin-top: 50;
+  margin-top: 50px;
 `;
 
 export const TripDetailTitle = styled.Text`
   font-weight: bold;
-  font-size: 30;
+  font-size: 30px;
   color: ${({ theme }) => theme.Maincolor};
   text-align: left;
-  margin-top: 10;
-  margin-left: 40;
+  margin-top: 10px;
+  margin-left: 40px;
 `;
 
 export const TripDescription = styled.Text`
-  font-size: 20;
+  font-size: 20px;
   color: ${({ theme }) => theme.blackish};
   text-align: left;
-  margin-top: 10;
-  margin-left: 40;
-  margin-right: 20;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 20px;
 `;

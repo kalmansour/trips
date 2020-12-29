@@ -23,7 +23,7 @@ const MyTabs = () => {
           if (route.name === "Explorer") {
             iconName = focused ? "search" : "search-outline";
           } else if (route.name === "createTrip") {
-            iconName = focused ? "add-circle" : "add-circle-outline";
+            iconName = focused ? "add" : "add";
           } else iconName = focused ? "person" : "person-outline";
 
           // You can return any component that you like here!
@@ -39,7 +39,11 @@ const MyTabs = () => {
       }}
     >
       <Tab.Screen name="Explorer" component={ExplorerStackScreen} />
-      <Tab.Screen name="createTrip" component={createTrip} />
+      <Tab.Screen
+        name="createTrip"
+        component={createTrip}
+        options={{ tabBarLabel: () => null }}
+      />
       <Tab.Screen name="Profile" component={ProfileStackScreen} />
     </Tab.Navigator>
   );
