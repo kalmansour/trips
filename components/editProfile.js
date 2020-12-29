@@ -24,7 +24,7 @@ const editProfile = ({ navigation }) => {
 
   const handleSubmit = async () => {
     await profileStore.updateProfile(profile);
-    navigation.navigate("Profile");
+    navigation.navigate("ProfileScreen");
   };
 
   useEffect(() => {

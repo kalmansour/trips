@@ -13,7 +13,7 @@ const TripList = ({ trips, navigation }) => {
   ));
 
   return (
-    <Content>
+    <Content style={{ marginTop: 10 }}>
       <List>{tripList}</List>
     </Content>
   );

@@ -7,6 +7,7 @@ import TripList from "./TripList";
 //Stores
 import tripStore from "../stores/tripStore";
 import authStore from "../stores/authStore";
+import { View } from "native-base";
 
 const Explorer = ({ navigation }) => {
   while (authStore.user) {

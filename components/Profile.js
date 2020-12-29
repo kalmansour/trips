@@ -1,7 +1,16 @@
 //Libraries
 import React from "react";
 import { observer } from "mobx-react";
-import { Spinner, Text } from "native-base";
+import {
+  Body,
+  Left,
+  ListItem,
+  Right,
+  Spinner,
+  Text,
+  View,
+  Item,
+} from "native-base";
 
 //Components
 import TripList from "./TripList";
@@ -16,7 +25,12 @@ import SignOutButton from "./buttons/SignoutButton";
 import EditButton from "./buttons/EditButton";
 
 //Styles
-import { ProfileWrapper, ProfileImage, ProfileBio } from "../styles";
+import {
+  ProfileWrapper,
+  ProfileImage,
+  ProfileUsernameStyled,
+  ProfileBio,
+} from "../styles";
 
 const Profile = ({ navigation, route }) => {
   if (!authStore.user) return <Spinner />;
@@ -32,15 +46,24 @@ const Profile = ({ navigation, route }) => {
     <>
       <ProfileWrapper>
         {userProfile.id === authStore.user.id ? (
-          <>
-            <SignOutButton navigation={navigation} />
-            <EditButton navigation={navigation} />
-          </>
+          <View style={{ height: 50 }}>
+            <Item style={{ marginTop: 0 }}>
+              <Left>
+                <EditButton
+                  navigation={navigation}
+                  style={{ marginRight: 100 }}
+                />
+              </Left>
+              <Right>
+                <SignOutButton navigation={navigation} />
+              </Right>
+            </Item>
+          </View>
         ) : (
           <></>
         )}
-        <Text>{userProfile.username}</Text>
         <ProfileImage source={{ uri: userProfile.image }} />
+        <ProfileUsernameStyled>{userProfile.username}</ProfileUsernameStyled>
         <ProfileBio>{userProfile.bio}</ProfileBio>
       </ProfileWrapper>
       <TripList trips={trips} navigation={navigation} />

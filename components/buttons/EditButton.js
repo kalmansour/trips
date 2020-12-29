@@ -8,8 +8,8 @@ const EditButton = () => {
 
   return (
     <EditButtonStyled
-      type="AntDesign"
-      name="edit"
+      type="MaterialCommunityIcons"
+      name="account-edit-outline"
       onPress={() => navigation.navigate("editProfile")}
     />
   );

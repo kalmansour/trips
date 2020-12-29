@@ -29,7 +29,7 @@ const createTrip = ({ navigation, route }) => {
       await tripStore.updateTrip(trip);
       route.params.oldTrip = null;
     } else await tripStore.createTrip(trip);
-    navigation.navigate("Profile");
+    navigation.navigate("ProfileScreen");
   };
 
   useEffect(() => {

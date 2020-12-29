@@ -5,7 +5,12 @@ import { Image } from "react-native";
 import tripStore from "../stores/tripStore";
 
 //Styling
-import { TripDetailWrapper, TripDetailImage, TripDetailTitle } from "../styles";
+import {
+  TripDetailWrapper,
+  TripDetailImage,
+  TripDetailTitle,
+  TripDescription,
+} from "../styles";
 import { Spinner, Text } from "native-base";
 
 //Components
@@ -17,15 +22,14 @@ const TripDetail = ({ navigation, route }) => {
   return (
     <>
       <TripDetailWrapper>
-        <Image
-          style={{ width: 100, height: 100 }}
+        <TripDetailImage
           source={{
             uri: trip.image,
           }}
         />
         <TripDetailTitle>{trip.title}</TripDetailTitle>
       </TripDetailWrapper>
-      <Text>{trip.description}</Text>
+      <TripDescription>{trip.description}</TripDescription>
     </>
   );
 };

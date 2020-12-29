@@ -4,8 +4,10 @@ import { Icon, Button } from "native-base";
 export const theme = {
   Maincolor: "#FF5A5F", // redish main font color
   backgroundColor: "#f5fffa", // white main background color
+  black: "black",
   blackish: "#484848",
   grey: "#767676",
+  blueish: "#00A699",
 };
 
 //Profile
@@ -14,14 +16,24 @@ export const ProfileWrapper = styled.View`
 `;
 
 export const ProfileImage = styled.Image`
-  width: 150;
-  height: 150;
+  width: 200;
+  height: 200;
   margin-right: auto;
   margin-left: auto;
+  border-radius: 100;
+`;
+
+export const ProfileUsernameStyled = styled.Text`
+  color: ${({ theme }) => theme.black};
+  font-weight: bold;
+  font-size: 30;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10;
 `;
 
 export const ProfileBio = styled.Text`
-  color: ${({ theme }) => theme.Maincolor};
+  color: ${({ theme }) => theme.blackish};
   font-weight: bold;
   font-size: 20;
   margin-right: auto;
@@ -75,6 +87,13 @@ export const SkipStyled = styled.Text`
 `;
 
 export const SignOutButtonStyled = styled(Icon)`
+  color: ${({ theme }) => theme.blueish};
+  margin-right: 10px;
+  padding-left: 20;
+  margin-bottom: 10;
+`;
+
+export const BackButtonStyled = styled(Icon)`
   color: black;
   margin-right: 10px;
   padding-left: 20;
@@ -131,17 +150,22 @@ export const AuthOther = styled.Text`
 export const TripItemStyled = styled.Text`
   color: ${({ theme }) => theme.Maincolor};
   font-size: 18;
-  margin-top: 10;
+  margin-top: 30;
   margin-bottom: 10;
-  margin-left: 16;
+  margin-left: 30;
   width: 100%;
+`;
+
+export const TripImageStyled = styled.Image`
+  width: 100;
+  height: 100;
 `;
 
 //Edit Button
 export const EditButtonStyled = styled(Icon)`
-  color: ${({ theme }) => theme.blackish};
-  margin-right: 10px;
+  color: ${({ theme }) => theme.blueish};
   padding-left: 20;
+  margin-bottom: 10;
 `;
 
 //Delete Button
@@ -152,11 +176,11 @@ export const DeleteButtonStyled = styled(Icon)`
 `;
 
 //Update Button
-export const UpdateButtonStyled = styled(Button)`
-  height: 35;
-  width: 70;
-  margin-top: 10;
-  /* background-color: ${({ theme }) => theme.mainColor}; */
+export const UpdateButtonStyled = styled(Icon)`
+  color: ${({ theme }) => theme.blueish};
+  margin-right: 5px;
+  padding-left: 20;
+  margin-bottom: 10;
 `;
 
 export const UpdateTextStyled = styled.Text`
@@ -169,8 +193,10 @@ export const UpdateTextStyled = styled.Text`
 
 //Trip Details Styling
 export const TripDetailImage = styled.Image`
-  width: 150;
-  height: 150;
+  margin-left: auto;
+  margin-right: auto;
+  width: 350;
+  height: 300;
 `;
 
 export const TripDetailWrapper = styled.View`
@@ -179,5 +205,18 @@ export const TripDetailWrapper = styled.View`
 
 export const TripDetailTitle = styled.Text`
   font-weight: bold;
-  font-size: 40;
+  font-size: 30;
+  color: ${({ theme }) => theme.Maincolor};
+  text-align: left;
+  margin-top: 10;
+  margin-left: 40;
+`;
+
+export const TripDescription = styled.Text`
+  font-size: 20;
+  color: ${({ theme }) => theme.blackish};
+  text-align: left;
+  margin-top: 10;
+  margin-left: 40;
+  margin-right: 20;
 `;

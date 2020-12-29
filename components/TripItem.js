@@ -3,7 +3,7 @@ import React from "react";
 import { observer } from "mobx-react";
 
 //Styles
-import { TripItemStyled } from "../styles";
+import { TripItemStyled, TripImageStyled } from "../styles";
 import { ListItem, Left, Right } from "native-base";
 import { Image, Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -24,7 +24,7 @@ const TripItem = ({ trip, navigation }) => {
   return (
     <ListItem onPress={() => navigation.navigate("TripDetail", { trip: trip })}>
       <Left>
-        <Image style={{ width: 50, height: 50 }} source={{ uri: trip.image }} />
+        <TripImageStyled source={{ uri: trip.image }} />
         <TripItemStyled>{trip.title}</TripItemStyled>
       </Left>
       {myProfile ? (
@@ -36,12 +36,16 @@ const TripItem = ({ trip, navigation }) => {
         <Right>
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate("Profile", {
+              navigation.navigate("ProfileScreen", {
                 userId: profile.userId,
               })
             }
           >
-            <Text>created by {profile.username}</Text>
+            <Image
+              style={{ width: 50, height: 50, borderRadius: 40 }}
+              source={{ uri: profile.image }}
+            />
+            <Text>{profile.username}</Text>
           </TouchableOpacity>
         </Right>
       )}

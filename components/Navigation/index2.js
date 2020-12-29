@@ -40,7 +40,7 @@ const MyTabs = () => {
     >
       <Tab.Screen name="Explorer" component={ExplorerStackScreen} />
       <Tab.Screen name="createTrip" component={createTrip} />
-      <Tab.Screen name="ProfileTab" component={ProfileStackScreen} />
+      <Tab.Screen name="Profile" component={ProfileStackScreen} />
     </Tab.Navigator>
   );
 };

@@ -2,17 +2,17 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
 //Styles
-import { UpdateButtonStyled, UpdateTextStyled } from "../../styles";
+import { UpdateButtonStyled } from "../../styles";
 
 const UpdateButton = ({ oldTrip }) => {
   const navigation = useNavigation();
 
   return (
     <UpdateButtonStyled
+      type="FontAwesome5"
+      name="edit"
       onPress={() => navigation.navigate("createTrip", { oldTrip })}
-    >
-      <UpdateTextStyled>Update</UpdateTextStyled>
-    </UpdateButtonStyled>
+    />
   );
 };
 
