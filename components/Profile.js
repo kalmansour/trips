@@ -23,7 +23,6 @@ const Profile = ({ navigation, route }) => {
   const userProfile = profileStore.getProfileById(
     route.params?.userId ? route.params.userId : authStore.user.id
   );
-  console.log("1");
   const trips = tripStore.trips.filter(
     (trip) =>
       trip.userId ===

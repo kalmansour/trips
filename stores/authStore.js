@@ -41,8 +41,8 @@ class AuthStore {
     }
   };
 
-  signout = async (token) => {
-    await AsyncStorage.removeItem("myToken", token);
+  signout = async () => {
+    await AsyncStorage.removeItem("myToken");
     delete instance.defaults.headers.common.Authorization;
     this.user = null;
     console.log("AuthStore -> signout");
